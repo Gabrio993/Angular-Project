@@ -1,0 +1,47 @@
+<!-- Contenitore principale -->
+<div class="container">
+  <div class="row mt-5">
+    <h3 class="mb-4 mt-2 text-light text-center">I nostri corsi</h3>
+    @for(corso of corsi; track corso.id){
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ corso.name }}</h5>
+          <p class="card-text">{{ corso.description }}</p>
+          <div class="btn-container">
+            <button
+              class="btn btn-sm flex-row justify-content-between"
+              (click)="mostraDettagli(corso)"
+            >
+              {{
+                corsoSelezionato?.id === corso.id
+                  ? "Nascondi dettagli"
+                  : "Dettagli"
+              }}
+            </button>
+            <!-- Mostra il pulsante Elimina solo se showDeleteButton è true -->
+            @if (showDeleteButton) {
+            <button
+              class="btn btn-sm delete ms-2"
+              (click)="onElimina(corso.id)"
+            >
+              Elimina
+            </button>
+            }
+            <button class="btn btn-sm" (click)="prenotaCorso(corso)">
+              Prenota
+            </button>
+          </div>
+        </div>
+        @if(corsoSelezionato?.id === corso.id){
+        <div class="details-container mt-4">
+          <app-corso-dettagli [corso]="corsoSelezionato"></app-corso-dettagli>
+        </div>
+        }
+      </div>
+    </div>
+
+    }
+  </div>
+</div>

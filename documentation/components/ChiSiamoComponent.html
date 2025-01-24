@@ -1,0 +1,477 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ang-fitness documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">ang-fitness documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ChiSiamoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/chi-siamo/chi-siamo.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-chi-siamo</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./chi-siamo.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./chi-siamo.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-chi-siamo&#x27;,
+  standalone: true,
+  imports: [],
+  templateUrl: &#x27;./chi-siamo.component.html&#x27;,
+  styleUrl: &#x27;./chi-siamo.component.css&#x27;
+})
+export class ChiSiamoComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container chi-siamo-container&quot;&gt;
+  &lt;!-- Intestazione --&gt;
+  &lt;div class&#x3D;&quot;text-center mb-5 mt-5&quot;&gt;
+    &lt;h1 class&#x3D;&quot;text-light&quot;&gt;
+      &lt;i class&#x3D;&quot;fas fa-person-running icon&quot;&gt;&lt;/i&gt;
+      Benvenuti nel nostro angolo di fitness e benessere!
+      &lt;i class&#x3D;&quot;fas fa-person-running icon&quot;&gt;&lt;/i&gt;
+    &lt;/h1&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Sezione Storia --&gt;
+  &lt;section class&#x3D;&quot;mb-5 story&quot;&gt;
+    &lt;p class&#x3D;&quot;text-light mb-5 text-center&quot;&gt;
+      Fondata nel cuore della città, AngFitness è più di una palestra. È un
+      luogo dove le persone si incontrano, si ispirano e crescono insieme. Con
+      anni di esperienza nel settore, ci impegniamo a fornire un ambiente
+      accogliente e motivante per ogni individuo.
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;text-light text-center&quot;&gt;
+      Offriamo una vasta gamma di corsi per tutte le età e livelli di fitness,
+      dal cardio alla forza, fino al relax. Ogni giorno lavoriamo per aiutare i
+      nostri membri a raggiungere i loro obiettivi di benessere fisico e
+      mentale.
+    &lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Sezione I Nostri Valori --&gt;
+  &lt;section class&#x3D;&quot;mb-5 bg-dark p-4 our-values&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-center text-light mb-5&quot;&gt;I Nostri Valori&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;row text-center&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+        &lt;h4&gt;Passione&lt;/h4&gt;
+        &lt;p class&#x3D;&quot;text-light&quot;&gt;
+          La passione per il fitness ci guida ogni giorno nel nostro lavoro.
+          Siamo motivati a fare la differenza nella vita delle persone.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+        &lt;h4&gt;Comunità&lt;/h4&gt;
+        &lt;p class&#x3D;&quot;text-light&quot;&gt;
+          Crediamo nel potere della comunità. La palestra è il nostro punto di
+          incontro dove i membri si sostengono a vicenda.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+        &lt;h4&gt;Innovazione&lt;/h4&gt;
+        &lt;p class&#x3D;&quot;text-light&quot;&gt;
+          Inseguiamo costantemente nuove tendenze nel mondo del fitness e
+          utilizziamo le migliori tecnologie per migliorare l&#x27;esperienza dei
+          nostri utenti.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Sezione Il Nostro Team --&gt;
+  &lt;section class&#x3D;&quot;mb-5 team&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-center mb-3&quot;&gt;Il Nostro Team&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-4 mb-4&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;img
+            src&#x3D;&quot;https://img.freepik.com/vektoren-kostenlos/die-veranschaulichung-des-laechelnden-jungen_1308-174669.jpg&quot;
+            class&#x3D;&quot;card-img-top&quot;
+            alt&#x3D;&quot;Istruttore 1&quot;
+          /&gt;
+          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Marco Bianchi&lt;/h5&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              Personal trainer e specialista in allenamento funzionale. Aiuta i
+              suoi clienti a superare i propri limiti e raggiungere performance
+              straordinarie.
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4 mb-4&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;img
+            src&#x3D;&quot;https://thumbs.dreamstime.com/b/d-avatar-illustration-smiling-happy-girl-cartoon-close-up-portrait-standing-isolated-transparent-png-background-generative-272798686.jpg&quot;
+            class&#x3D;&quot;card-img-top&quot;
+            alt&#x3D;&quot;Istruttore 2&quot;
+          /&gt;
+          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Anna Rossi&lt;/h5&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              Istruttrice di Yoga e Pilates. La sua passione per il benessere e
+              l&#x27;equilibrio mentale la rende una guida perfetta per i nostri
+              corsisti.
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4 mb-4&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;img
+            src&#x3D;&quot;https://img.freepik.com/free-vector/young-prince-vector-illustration_1308-174367.jpg&quot;
+            class&#x3D;&quot;card-img-top&quot;
+            alt&#x3D;&quot;Istruttore 3&quot;
+          /&gt;
+          &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
+            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Luca Verdi&lt;/h5&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              Coach di CrossFit. La sua energia contagiosa motiva tutti a dare
+              il massimo in ogni allenamento. Punto di riferimento importante
+              per tutti.
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Sezione Galleria --&gt;
+  &lt;section class&#x3D;&quot;mb-5 gallery&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-center mb-3&quot;&gt;La Nostra Galleria&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-4 mb-4&quot;&gt;
+        &lt;img
+          src&#x3D;&quot;https://www.fitness-world.in/wp-content/uploads/2022/01/Planning-to-Install-a-Gym-in-your-Society-Banner-1200x620.jpg&quot;
+          class&#x3D;&quot;img-fluid&quot;
+          alt&#x3D;&quot;Palestra 1&quot;
+        /&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4 mb-4&quot;&gt;
+        &lt;img
+          src&#x3D;&quot;https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?cs&#x3D;srgb&amp;dl&#x3D;pexels-willpicturethis-1954524.jpg&amp;fm&#x3D;jpg&quot;
+          class&#x3D;&quot;img-fluid&quot;
+          alt&#x3D;&quot;Palestra 2&quot;
+        /&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4 mb-4&quot;&gt;
+        &lt;img
+          src&#x3D;&quot;https://www.fitness-world.in/wp-content/uploads/2022/01/5-Reasons-Why-Your-Residential-Building-Needs-a-Professional-Gym-Banner-1200x620.jpg&quot;
+          class&#x3D;&quot;img-fluid&quot;
+          alt&#x3D;&quot;Palestra 3&quot;
+        /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Sezione Contatti --&gt;
+  &lt;section class&#x3D;&quot;text-center mb-5 contact&quot;&gt;
+    &lt;p class&#x3D;&quot;text-light&quot;&gt;
+      Hai domande? Vuoi maggiori informazioni? Scrivici e ti risponderemo al più
+      presto!
+    &lt;/p&gt;
+    &lt;a href&#x3D;&quot;mailto:info@angfitness.com&quot; class&#x3D;&quot;btn btn-lg&quot;&gt;Contattaci&lt;/a&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container chi-siamo-container">  <!-- Intestazione -->  <div class="text-center mb-5 mt-5">    <h1 class="text-light">      <i class="fas fa-person-running icon"></i>      Benvenuti nel nostro angolo di fitness e benessere!      <i class="fas fa-person-running icon"></i>    </h1>  </div>  <!-- Sezione Storia -->  <section class="mb-5 story">    <p class="text-light mb-5 text-center">      Fondata nel cuore della città, AngFitness è più di una palestra. È un      luogo dove le persone si incontrano, si ispirano e crescono insieme. Con      anni di esperienza nel settore, ci impegniamo a fornire un ambiente      accogliente e motivante per ogni individuo.    </p>    <p class="text-light text-center">      Offriamo una vasta gamma di corsi per tutte le età e livelli di fitness,      dal cardio alla forza, fino al relax. Ogni giorno lavoriamo per aiutare i      nostri membri a raggiungere i loro obiettivi di benessere fisico e      mentale.    </p>  </section>  <!-- Sezione I Nostri Valori -->  <section class="mb-5 bg-dark p-4 our-values">    <h2 class="text-center text-light mb-5">I Nostri Valori</h2>    <div class="row text-center">      <div class="col-md-4">        <h4>Passione</h4>        <p class="text-light">          La passione per il fitness ci guida ogni giorno nel nostro lavoro.          Siamo motivati a fare la differenza nella vita delle persone.        </p>      </div>      <div class="col-md-4">        <h4>Comunità</h4>        <p class="text-light">          Crediamo nel potere della comunità. La palestra è il nostro punto di          incontro dove i membri si sostengono a vicenda.        </p>      </div>      <div class="col-md-4">        <h4>Innovazione</h4>        <p class="text-light">          Inseguiamo costantemente nuove tendenze nel mondo del fitness e          utilizziamo le migliori tecnologie per migliorare l\'esperienza dei          nostri utenti.        </p>      </div>    </div>  </section>  <!-- Sezione Il Nostro Team -->  <section class="mb-5 team">    <h2 class="text-center mb-3">Il Nostro Team</h2>    <div class="row">      <div class="col-md-4 mb-4">        <div class="card">          <img            src="https://img.freepik.com/vektoren-kostenlos/die-veranschaulichung-des-laechelnden-jungen_1308-174669.jpg"            class="card-img-top"            alt="Istruttore 1"          />          <div class="card-body text-center">            <h5 class="card-title">Marco Bianchi</h5>            <p class="card-text">              Personal trainer e specialista in allenamento funzionale. Aiuta i              suoi clienti a superare i propri limiti e raggiungere performance              straordinarie.            </p>          </div>        </div>      </div>      <div class="col-md-4 mb-4">        <div class="card">          <img            src="https://thumbs.dreamstime.com/b/d-avatar-illustration-smiling-happy-girl-cartoon-close-up-portrait-standing-isolated-transparent-png-background-generative-272798686.jpg"            class="card-img-top"            alt="Istruttore 2"          />          <div class="card-body text-center">            <h5 class="card-title">Anna Rossi</h5>            <p class="card-text">              Istruttrice di Yoga e Pilates. La sua passione per il benessere e              l\'equilibrio mentale la rende una guida perfetta per i nostri              corsisti.            </p>          </div>        </div>      </div>      <div class="col-md-4 mb-4">        <div class="card">          <img            src="https://img.freepik.com/free-vector/young-prince-vector-illustration_1308-174367.jpg"            class="card-img-top"            alt="Istruttore 3"          />          <div class="card-body text-center">            <h5 class="card-title">Luca Verdi</h5>            <p class="card-text">              Coach di CrossFit. La sua energia contagiosa motiva tutti a dare              il massimo in ogni allenamento. Punto di riferimento importante              per tutti.            </p>          </div>        </div>      </div>    </div>  </section>  <!-- Sezione Galleria -->  <section class="mb-5 gallery">    <h2 class="text-center mb-3">La Nostra Galleria</h2>    <div class="row">      <div class="col-md-4 mb-4">        <img          src="https://www.fitness-world.in/wp-content/uploads/2022/01/Planning-to-Install-a-Gym-in-your-Society-Banner-1200x620.jpg"          class="img-fluid"          alt="Palestra 1"        />      </div>      <div class="col-md-4 mb-4">        <img          src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?cs=srgb&dl=pexels-willpicturethis-1954524.jpg&fm=jpg"          class="img-fluid"          alt="Palestra 2"        />      </div>      <div class="col-md-4 mb-4">        <img          src="https://www.fitness-world.in/wp-content/uploads/2022/01/5-Reasons-Why-Your-Residential-Building-Needs-a-Professional-Gym-Banner-1200x620.jpg"          class="img-fluid"          alt="Palestra 3"        />      </div>    </div>  </section>  <!-- Sezione Contatti -->  <section class="text-center mb-5 contact">    <p class="text-light">      Hai domande? Vuoi maggiori informazioni? Scrivici e ti risponderemo al più      presto!    </p>    <a href="mailto:info@angfitness.com" class="btn btn-lg">Contattaci</a>  </section></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChiSiamoComponent', 'selector': 'app-chi-siamo'},{'name': 'CorsoDettagliComponent', 'selector': 'app-corso-dettagli'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListaCorsiComponent', 'selector': 'app-lista-corsi'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ChiSiamoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ChiSiamoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

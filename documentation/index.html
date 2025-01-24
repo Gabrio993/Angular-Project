@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ang-fitness documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">ang-fitness documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>Angular Fitness</h1>
+<h2>Descrizione Del Progetto</h2>
+<p>Questo progetto ha come obiettivo la visualizzazione dei corsi di una palestra con possibilita<br>da parte dell&#39;utente (già loggato) di prenotare un corso fino ad esaurimento posti.<br><strong>Per testare il controllo dell&#39;esaurimento posti, diminuire il valore di &quot;capacity&quot; nel db.json del relativo corso.</strong></p>
+<p>L&#39;utente amministratore invece, nella sua sezione potrà anche decidere se aggiungere o eliminare un corso attraverso<br>la compilazione di un form e potà accedere a tutte le prenotazioni dei corsi attuali.</p>
+<h3>Principali componenti:</h3>
+<ul>
+<li>HomeComponent</li>
+<li>ListaCorsi</li>
+<li>CorsoDettagli</li>
+<li>Admin</li>
+</ul>
+<p>Come da richieste progettuali, è stato implementato un service corsi.service.ts che si occupa di gestire la logica<br>di tutte le chiamata API (GET, POST, DELETE), in questo caso specifico.</p>
+<p>I dati principali del progetto sono stati descritti e tipizzati nell&#39;intrafaccia <strong>Corso</strong> e nell&#39;interfaccia <strong>Prenotazione</strong><br>all&#39;interno del file corso.types.d.ts<br>per garantire che i dati ricevuti siano consistenti e facilmente prevedibili.</p>
+<p><strong>Per visualizzare gli aggiornamnti su eventuali prenotazioni/eliminazioni, bisogna ricaricare la pagina</strong></p>
+<p>Per la simulazione del Backend è stato utilizzato il pacchetto json-server.<br>Di seguito gli endpoint:</p>
+<ul>
+<li><a href="http://localhost:8080/courses">Lista Corsi</a></li>
+<li><a href="http://localhost:8080/bookings">Lista Prenotazioni</a></li>
+</ul>
+<p>Assicurarsi prima di accedere agli endpoint di entrare nella cartella /mock-backend/ e lanciare il comando:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">json-server --watch db.json --port 8080</code></pre></div><p>Se si decide di cambiare la porta su cui ascolta JSON server, bisognerà cabiare il valore della<br>variabile <strong>BASE_URL</strong> all&#39;interno del <strong>corsi.service.ts</strong></p>
+<p>Per la <strong>documentazione completa</strong> del progetto, aprire il terminale dalla root del progetto, e lanciare il comando:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">npx compodoc -s</code></pre></div><p>Verra aperto un server che mostrerà la documentazione presa dalla cartella /documentation/.<br>Fare ctrl + click sull&#39;url mostrato, generalmente <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,45 @@
+h1 {
+  font-size: 1.7rem;
+}
+.icon {
+  color: rgba(255, 251, 0, 0.814);
+}
+h2 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+.chi-siamo-container {
+  margin-top: 100px;
+}
+
+.our-values {
+  border-radius: 10px;
+}
+.our-values h4 {
+  color: rgba(255, 251, 0, 0.814);
+}
+.card {
+  background-color: rgb(245, 245, 245);
+}
+.team h2 {
+  color: rgba(255, 251, 0, 0.814);
+}
+.gallery h2 {
+  color: rgba(255, 251, 0, 0.814);
+}
+.contact a {
+  background-color: rgba(255, 251, 0, 0.814);
+}
+.team img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+img {
+  width: 400px;
+  height: 250px;
+  border-radius: 10px;
+}

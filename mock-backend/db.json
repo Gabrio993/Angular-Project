@@ -1,0 +1,74 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "Pilates",
+      "description": "An introductory Pilates class focusing on basic poses, breathing techniques, and relaxation.",
+      "instructor": "Foo Bar",
+      "length": 20,
+      "capacity": 35
+    },
+    {
+      "id": "2",
+      "name": "Yoga for Beginners",
+      "description": "An introductory yoga class focusing on basic poses, breathing techniques, and relaxation.",
+      "instructor": "Jane Doe",
+      "length": 30,
+      "capacity": 25
+    },
+    {
+      "id": "3",
+      "name": "HIIT Blast",
+      "description": "high-intensity interval training class designed to boost cardiovascular fitness and burn calories.",
+      "instructor": "John Smith",
+      "length": 45,
+      "capacity": 20
+    },
+    {
+      "id": "4",
+      "name": "Strength Training Basics",
+      "description": "Learn proper techniques and form for lifting weights and building muscle strength ",
+      "instructor": "Emily Johnson",
+      "length": 50,
+      "capacity": 15
+    },
+    {
+      "id": "6",
+      "name": "Core and Abs",
+      "description": "Focus on strengthening and toning your core muscles with targeted exercises.",
+      "instructor": "Liam Brown",
+      "length": 25,
+      "capacity": 20
+    },
+    {
+      "id": "8",
+      "name": "Boxing Fitness",
+      "description": "A dynamic class combining boxing techniques and cardio exercises to improve strength and agility.",
+      "instructor": "Mike Tyson",
+      "length": 50,
+      "capacity": 18
+    },
+    {
+      "id": "9",
+      "name": "Yoga Basics",
+      "description": "A beginner-friendly yoga class that covers fundamental poses, breathing exercises, and mindfulness techniques.",
+      "instructor": "Jane Doe",
+      "length": 25,
+      "capacity": 30
+    }
+  ],
+  "bookings": [
+    {
+      "id": "903b",
+      "courseId": "1",
+      "name": "Pilates",
+      "capacity": 35
+    },
+    {
+      "id": "0897",
+      "courseId": "1",
+      "name": "Pilates",
+      "capacity": 35
+    }
+  ]
+}

@@ -1,27 +1,50 @@
-# AngFitness
+# Angular Fitness
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+## Descrizione Del Progetto
 
-## Development server
+Questo progetto ha come obiettivo la visualizzazione dei corsi di una palestra con possibilita  
+da parte dell'utente (già loggato) di prenotare un corso fino ad esaurimento posti.  
+**Per testare il controllo dell'esaurimento posti, diminuire il valore di "capacity" nel db.json del relativo corso.**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+L'utente amministratore invece, nella sua sezione potrà anche decidere se aggiungere o eliminare un corso attraverso  
+la compilazione di un form e potà accedere a tutte le prenotazioni dei corsi attuali.
 
-## Code scaffolding
+### Principali componenti:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- HomeComponent
+- ListaCorsi
+- CorsoDettagli
+- Admin
 
-## Build
+Come da richieste progettuali, è stato implementato un service corsi.service.ts che si occupa di gestire la logica  
+di tutte le chiamata API (GET, POST, DELETE), in questo caso specifico.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+I dati principali del progetto sono stati descritti e tipizzati nell'intrafaccia **Corso** e nell'interfaccia **Prenotazione**  
+all'interno del file corso.types.d.ts  
+per garantire che i dati ricevuti siano consistenti e facilmente prevedibili.
 
-## Running unit tests
+**Per visualizzare gli aggiornamnti su eventuali prenotazioni/eliminazioni, bisogna ricaricare la pagina**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Per la simulazione del Backend è stato utilizzato il pacchetto json-server.  
+Di seguito gli endpoint:
 
-## Running end-to-end tests
+- [Lista Corsi](http://localhost:8080/courses)
+- [Lista Prenotazioni](http://localhost:8080/bookings)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Assicurarsi prima di accedere agli endpoint di entrare nella cartella /mock-backend/ e lanciare il comando:
 
-## Further help
+```bash
+json-server --watch db.json --port 8080
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Se si decide di cambiare la porta su cui ascolta JSON server, bisognerà cabiare il valore della  
+variabile **BASE_URL** all'interno del **corsi.service.ts**
+
+Per la **documentazione completa** del progetto, aprire il terminale dalla root del progetto, e lanciare il comando:
+
+```bash
+npx compodoc -s
+```
+
+Verra aperto un server che mostrerà la documentazione presa dalla cartella /documentation/.  
+Fare ctrl + click sull'url mostrato, generalmente http://127.0.0.1:8080

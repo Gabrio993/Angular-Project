@@ -1,0 +1,128 @@
+<div class="container">
+  <h2 class="text-light">Gestione Corsi</h2>
+  <div class="btn-container">
+    <!-- Pulsante per mostrare il form per aggiungere un corso (admin) -->
+    <button class="btn mt-4 mb-4" (click)="toggleForm()">
+      {{ showForm ? "Nascondi Form" : "Aggiungi Corso" }}
+    </button>
+    <!-- Pulsante per mostrare le prenotazioni all'admin -->
+    <button class="btn mt-4 mb-4" (click)="mostraPrenotazioni()">
+      {{
+        flagMostraPrenotazioni ? "Nascondi Prenotazioni" : "Mostra prenotazioni"
+      }}
+    </button>
+  </div>
+  <!-- Prenotazioni -->
+  <div class="bookings-container">
+    @if(prenotazioni.length > 0){
+    <div>
+      @for(prenotazione of prenotazioni; track prenotazione.courseId){
+      <ul>
+        <li class="text-light">Corso ID: {{ prenotazione.courseId }}</li>
+        <li class="text-light">Nome: {{ prenotazione.name }}</li>
+        <li class="text-light">Capacità: {{ prenotazione.capacity }}</li>
+      </ul>
+      }
+    </div>
+    }
+  </div>
+
+  <!-- Form di aggiunta Corso -->
+  @if(showForm){
+  <form
+    class="mt-4 mb-4 text-light"
+    #formCorso="ngForm"
+    (ngSubmit)="aggiungiCorso(formCorso)"
+  >
+    <div class="form-group col-md-6">
+      <label class="text-light" for="id">ID Corso</label>
+      <input
+        type="text"
+        id="id"
+        class="form-control bg-dark text-light text-light"
+        name="id"
+        ngModel
+        required
+      />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label class="text-light" for="name">Nome</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control bg-dark text-light"
+          name="name"
+          ngModel
+          required
+        />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label class="text-light" for="instructor">Istruttore</label>
+        <input
+          type="text"
+          id="instructor"
+          class="form-control bg-dark text-light"
+          name="instructor"
+          ngModel
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="text-light" for="description">Descrizione</label>
+      <textarea
+        id="description"
+        class="form-control bg-dark text-light"
+        name="description"
+        ngModel
+        required
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label class="text-light" for="length">Durata (min)</label>
+        <input
+          type="number"
+          id="length"
+          class="form-control bg-dark text-light"
+          name="length"
+          ngModel
+          required
+          min="1"
+        />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label class="text-light" for="capacity">Capacità</label>
+        <input
+          type="number"
+          id="capacity"
+          class="form-control bg-dark text-light"
+          name="capacity"
+          ngModel
+          required
+          min="1"
+        />
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn mt-4" [disabled]="formCorso.invalid">
+        Salva
+      </button>
+    </div>
+  </form>
+  }
+
+  <!--  componente ListaCorsi Renderizzato -->
+  <app-lista-corsi
+    [showDeleteButton]="true"
+    (elimina)="eliminaCorso($event)"
+  ></app-lista-corsi>
+</div>

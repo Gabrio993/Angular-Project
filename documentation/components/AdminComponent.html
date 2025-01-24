@@ -1,0 +1,1167 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ang-fitness documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">ang-fitness documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/admin.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/ListaCorsiComponent.html" target="_self" >ListaCorsiComponent</a></code>
+                            <code>FormsModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./admin.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#corsi" >corsi</a>
+                            </li>
+                            <li>
+                                <a href="#flagMostraPrenotazioni" >flagMostraPrenotazioni</a>
+                            </li>
+                            <li>
+                                <a href="#prenotazioni" >prenotazioni</a>
+                            </li>
+                            <li>
+                                <a href="#showForm" >showForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#aggiungiCorso" >aggiungiCorso</a>
+                            </li>
+                            <li>
+                                <a href="#caricaCorsi" >caricaCorsi</a>
+                            </li>
+                            <li>
+                                <a href="#eliminaCorso" >eliminaCorso</a>
+                            </li>
+                            <li>
+                                <a href="#mostraPrenotazioni" >mostraPrenotazioni</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toggleForm" >toggleForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(corsiService: <a href="../injectables/CorsiService.html" target="_self">CorsiService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/admin/admin.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>corsiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CorsiService.html" target="_self" >CorsiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aggiungiCorso"></a>
+                    <span class="name">
+                        <span ><b>aggiungiCorso</b></span>
+                        <a href="#aggiungiCorso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>aggiungiCorso(form: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/admin/admin.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Aggiunge un nuovo corso utilizzando i dati forniti nel form.
+Verifica la validità del form prima di procedere.
+Se il form è valido, crea un nuovo oggetto Corso e lo aggiunge tramite il servizio CorsiService.
+In caso di successo, mostra un messaggio di conferma, ricarica la lista dei corsi,
+nasconde il form e resetta i campi del form.
+Gestisce e logga eventuali errori durante il processo di aggiunta.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>form</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Il form contenente i dati del nuovo corso da aggiungere.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="caricaCorsi"></a>
+                    <span class="name">
+                        <span ><b>caricaCorsi</b></span>
+                        <a href="#caricaCorsi"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>caricaCorsi()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/admin/admin.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carica i corsi utilizzando il servizio <code>corsiService</code>.
+Utilizza l&#39;operatore <code>fetchCorsi()</code> per ottenere la lista dei corsi.
+Se l&#39;operazione va a buon fine, assegna la lista dei corsi ricevuti alla
+proprietà <code>corsi</code>.
+Se l&#39;operazione fallisce, stampa un messaggio di errore sulla console.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminaCorso"></a>
+                    <span class="name">
+                        <span ><b>eliminaCorso</b></span>
+                        <a href="#eliminaCorso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminaCorso(corsoId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/admin/admin.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina il corso con l&#39;id specificato.
+Richiede conferma all&#39;utente prima di procedere con l&#39;eliminazione.
+Se l&#39;eliminazione va a buon fine, mostra un messaggio di successo e ricarica i corsi.
+Se l&#39;eliminazione fallisce, stampa un messaggio di errore sulla console.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>corsoId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>id del corso da eliminare</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostraPrenotazioni"></a>
+                    <span class="name">
+                        <span ><b>mostraPrenotazioni</b></span>
+                        <a href="#mostraPrenotazioni"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mostraPrenotazioni()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/admin/admin.component.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mostra o nasconde la lista delle prenotazioni.
+Se le prenotazioni non sono state ancora caricate, le carica dal servizio CorsiService
+e le salva nell&#39;array prenotazioni. Se le prenotazioni sono già state caricate,
+le nasconde e cancella l&#39;array prenotazioni.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/admin/admin.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Chiamato quando il componente viene inizializzato.
+Richiama il metodo <code>caricaCorsi()</code> per caricare i corsi.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleForm"></a>
+                    <span class="name">
+                        <span ><b>toggleForm</b></span>
+                        <a href="#toggleForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/admin/admin.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Alterna la visibilità del form per l&#39;aggiunta di nuovi corsi.
+Se il form è visibile, lo nasconde. Se il form è nascosto, lo mostra.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="corsi"></a>
+                    <span class="name">
+                        <span ><b>corsi</b></span>
+                        <a href="#corsi"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Corso[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/admin/admin.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="flagMostraPrenotazioni"></a>
+                    <span class="name">
+                        <span ><b>flagMostraPrenotazioni</b></span>
+                        <a href="#flagMostraPrenotazioni"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/admin/admin.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prenotazioni"></a>
+                    <span class="name">
+                        <span ><b>prenotazioni</b></span>
+                        <a href="#prenotazioni"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prenotazione[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/admin/admin.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showForm"></a>
+                    <span class="name">
+                        <span ><b>showForm</b></span>
+                        <a href="#showForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/admin/admin.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { ListaCorsiComponent } from &#x27;../lista-corsi/lista-corsi.component&#x27;;
+import { CorsiService } from &#x27;../lista-corsi/corsi.service&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { Corso, Prenotazione } from &#x27;../lista-corsi/corso-dettagli/corso.types&#x27;;
+
+@Component({
+  selector: &#x27;app-admin&#x27;,
+  standalone: true,
+  imports: [ListaCorsiComponent, FormsModule],
+  templateUrl: &#x27;./admin.component.html&#x27;,
+  styleUrl: &#x27;./admin.component.css&#x27;,
+})
+export class AdminComponent {
+  corsi: Corso[] &#x3D; [];
+  showForm: boolean &#x3D; false; // Per gestire la visibilità del form
+  prenotazioni: Prenotazione[] &#x3D; [];
+  flagMostraPrenotazioni: boolean &#x3D; false;
+
+  constructor(private corsiService: CorsiService) {}
+
+  /**
+   * Chiamato quando il componente viene inizializzato.
+   * Richiama il metodo &#x60;caricaCorsi()&#x60; per caricare i corsi.
+   */
+  ngOnInit(): void {
+    this.caricaCorsi();
+  }
+
+  /**
+   * Carica i corsi utilizzando il servizio &#x60;corsiService&#x60;.
+   * Utilizza l&#x27;operatore &#x60;fetchCorsi()&#x60; per ottenere la lista dei corsi.
+   * Se l&#x27;operazione va a buon fine, assegna la lista dei corsi ricevuti alla
+   * proprietà &#x60;corsi&#x60;.
+   * Se l&#x27;operazione fallisce, stampa un messaggio di errore sulla console.
+   */
+  caricaCorsi(): void {
+    this.corsiService.fetchCorsi(&#x27;Errore nel caricamento dei dati&#x27;).subscribe({
+      next: (data) &#x3D;&gt; (this.corsi &#x3D; data),
+      error: (err) &#x3D;&gt; console.error(&#x27;Errore nel caricamento dei corsi:&#x27;, err),
+    });
+  }
+
+  /**
+   * Elimina il corso con l&#x27;id specificato.
+   * Richiede conferma all&#x27;utente prima di procedere con l&#x27;eliminazione.
+   * Se l&#x27;eliminazione va a buon fine, mostra un messaggio di successo e ricarica i corsi.
+   * Se l&#x27;eliminazione fallisce, stampa un messaggio di errore sulla console.
+   * @param corsoId id del corso da eliminare
+   */
+  eliminaCorso(corsoId: string): void {
+    console.log(&#x27;sto eliminando il corso con id:&#x27;, corsoId);
+
+    if (confirm(&#x27;Sei sicuro di voler eliminare questo corso?&#x27;)) {
+      this.corsiService.deleteCorso(corsoId).subscribe({
+        next: () &#x3D;&gt; {
+          alert(&#x27;Corso eliminato con successo!&#x27;);
+          this.caricaCorsi(); // Ricarica i corsi aggiornati
+        },
+        error: (err) &#x3D;&gt; {
+          console.error(&quot;Errore durante l&#x27;eliminazione del corso:&quot;, err);
+        },
+      });
+    }
+  }
+
+  /**
+   * Alterna la visibilità del form per l&#x27;aggiunta di nuovi corsi.
+   * Se il form è visibile, lo nasconde. Se il form è nascosto, lo mostra.
+   */
+  toggleForm(): void {
+    this.showForm &#x3D; !this.showForm;
+  }
+
+  /**
+   * Aggiunge un nuovo corso utilizzando i dati forniti nel form.
+   * Verifica la validità del form prima di procedere.
+   * Se il form è valido, crea un nuovo oggetto Corso e lo aggiunge tramite il servizio CorsiService.
+   * In caso di successo, mostra un messaggio di conferma, ricarica la lista dei corsi,
+   * nasconde il form e resetta i campi del form.
+   * Gestisce e logga eventuali errori durante il processo di aggiunta.
+   *
+   * @param form - Il form contenente i dati del nuovo corso da aggiungere.
+   */
+  aggiungiCorso(form: any): void {
+    if (form.valid) {
+      const nuovoCorso: Corso &#x3D; {
+        id: form.value.id,
+        name: form.value.name,
+        description: form.value.description,
+        instructor: form.value.instructor,
+        length: form.value.length,
+        capacity: form.value.capacity,
+      };
+
+      // Controlla se l&#x27;ID è già presente
+      this.corsiService
+        .fetchCorsi(&#x27;something wrong&#x27;)
+        .subscribe((corsi: Corso[]) &#x3D;&gt; {
+          const idEsistente &#x3D; corsi.some((corso) &#x3D;&gt; corso.id &#x3D;&#x3D;&#x3D; nuovoCorso.id);
+
+          if (idEsistente) {
+            alert(
+              &#x60;Errore: L&#x27;ID ${nuovoCorso.id} è già utilizzato da un altro corso.&#x60;
+            );
+          } else {
+            // Aggiungi il nuovo corso solo se l&#x27;ID non esiste
+            this.corsiService.addCorso(nuovoCorso).subscribe({
+              next: () &#x3D;&gt; {
+                alert(&#x27;Corso aggiunto con successo!&#x27;);
+                this.caricaCorsi(); // Ricarica la lista dei corsi
+                this.showForm &#x3D; false; // Nasconde il form
+                form.reset(); // Resetta il form
+              },
+              error: (err) &#x3D;&gt; console.error(&quot;Errore durante l&#x27;aggiunta:&quot;, err),
+            });
+          }
+        });
+    }
+  }
+
+  /**
+   * Mostra o nasconde la lista delle prenotazioni.
+   * Se le prenotazioni non sono state ancora caricate, le carica dal servizio CorsiService
+   * e le salva nell&#x27;array prenotazioni. Se le prenotazioni sono già state caricate,
+   * le nasconde e cancella l&#x27;array prenotazioni.
+   */
+  mostraPrenotazioni() {
+    if (!this.flagMostraPrenotazioni) {
+      this.corsiService.showBookings().subscribe({
+        next: (data) &#x3D;&gt; {
+          this.prenotazioni &#x3D; data; // Salva i dati ricevuti nell&#x27;array prenotazioni
+          this.flagMostraPrenotazioni &#x3D; true;
+          console.log(&#x27;Prenotazioni caricate:&#x27;, this.prenotazioni); // Debug
+        },
+        error: (err) &#x3D;&gt; {
+          console.error(&#x27;Errore nel caricamento delle prenotazioni:&#x27;, err);
+          alert(&#x27;Impossibile caricare le prenotazioni. Riprova più tardi.&#x27;);
+        },
+      });
+    } else {
+      this.flagMostraPrenotazioni &#x3D; false;
+      this.prenotazioni &#x3D; [];
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;h2 class&#x3D;&quot;text-light&quot;&gt;Gestione Corsi&lt;/h2&gt;
+  &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+    &lt;!-- Pulsante per mostrare il form per aggiungere un corso (admin) --&gt;
+    &lt;button class&#x3D;&quot;btn mt-4 mb-4&quot; (click)&#x3D;&quot;toggleForm()&quot;&gt;
+      {{ showForm ? &quot;Nascondi Form&quot; : &quot;Aggiungi Corso&quot; }}
+    &lt;/button&gt;
+    &lt;!-- Pulsante per mostrare le prenotazioni all&#x27;admin --&gt;
+    &lt;button class&#x3D;&quot;btn mt-4 mb-4&quot; (click)&#x3D;&quot;mostraPrenotazioni()&quot;&gt;
+      {{
+        flagMostraPrenotazioni ? &quot;Nascondi Prenotazioni&quot; : &quot;Mostra prenotazioni&quot;
+      }}
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;!-- Prenotazioni --&gt;
+  &lt;div class&#x3D;&quot;bookings-container&quot;&gt;
+    @if(prenotazioni.length &gt; 0){
+    &lt;div&gt;
+      @for(prenotazione of prenotazioni; track prenotazione.courseId){
+      &lt;ul&gt;
+        &lt;li class&#x3D;&quot;text-light&quot;&gt;Corso ID: {{ prenotazione.courseId }}&lt;/li&gt;
+        &lt;li class&#x3D;&quot;text-light&quot;&gt;Nome: {{ prenotazione.name }}&lt;/li&gt;
+        &lt;li class&#x3D;&quot;text-light&quot;&gt;Capacità: {{ prenotazione.capacity }}&lt;/li&gt;
+      &lt;/ul&gt;
+      }
+    &lt;/div&gt;
+    }
+  &lt;/div&gt;
+
+  &lt;!-- Form di aggiunta Corso --&gt;
+  @if(showForm){
+  &lt;form
+    class&#x3D;&quot;mt-4 mb-4 text-light&quot;
+    #formCorso&#x3D;&quot;ngForm&quot;
+    (ngSubmit)&#x3D;&quot;aggiungiCorso(formCorso)&quot;
+  &gt;
+    &lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+      &lt;label class&#x3D;&quot;text-light&quot; for&#x3D;&quot;id&quot;&gt;ID Corso&lt;/label&gt;
+      &lt;input
+        type&#x3D;&quot;text&quot;
+        id&#x3D;&quot;id&quot;
+        class&#x3D;&quot;form-control bg-dark text-light text-light&quot;
+        name&#x3D;&quot;id&quot;
+        ngModel
+        required
+      /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-row&quot;&gt;
+      &lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+        &lt;label class&#x3D;&quot;text-light&quot; for&#x3D;&quot;name&quot;&gt;Nome&lt;/label&gt;
+        &lt;input
+          type&#x3D;&quot;text&quot;
+          id&#x3D;&quot;name&quot;
+          class&#x3D;&quot;form-control bg-dark text-light&quot;
+          name&#x3D;&quot;name&quot;
+          ngModel
+          required
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+        &lt;label class&#x3D;&quot;text-light&quot; for&#x3D;&quot;instructor&quot;&gt;Istruttore&lt;/label&gt;
+        &lt;input
+          type&#x3D;&quot;text&quot;
+          id&#x3D;&quot;instructor&quot;
+          class&#x3D;&quot;form-control bg-dark text-light&quot;
+          name&#x3D;&quot;instructor&quot;
+          ngModel
+          required
+        /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+      &lt;label class&#x3D;&quot;text-light&quot; for&#x3D;&quot;description&quot;&gt;Descrizione&lt;/label&gt;
+      &lt;textarea
+        id&#x3D;&quot;description&quot;
+        class&#x3D;&quot;form-control bg-dark text-light&quot;
+        name&#x3D;&quot;description&quot;
+        ngModel
+        required
+        rows&#x3D;&quot;3&quot;
+      &gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-row&quot;&gt;
+      &lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+        &lt;label class&#x3D;&quot;text-light&quot; for&#x3D;&quot;length&quot;&gt;Durata (min)&lt;/label&gt;
+        &lt;input
+          type&#x3D;&quot;number&quot;
+          id&#x3D;&quot;length&quot;
+          class&#x3D;&quot;form-control bg-dark text-light&quot;
+          name&#x3D;&quot;length&quot;
+          ngModel
+          required
+          min&#x3D;&quot;1&quot;
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+        &lt;label class&#x3D;&quot;text-light&quot; for&#x3D;&quot;capacity&quot;&gt;Capacità&lt;/label&gt;
+        &lt;input
+          type&#x3D;&quot;number&quot;
+          id&#x3D;&quot;capacity&quot;
+          class&#x3D;&quot;form-control bg-dark text-light&quot;
+          name&#x3D;&quot;capacity&quot;
+          ngModel
+          required
+          min&#x3D;&quot;1&quot;
+        /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
+      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn mt-4&quot; [disabled]&#x3D;&quot;formCorso.invalid&quot;&gt;
+        Salva
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  }
+
+  &lt;!--  componente ListaCorsi Renderizzato --&gt;
+  &lt;app-lista-corsi
+    [showDeleteButton]&#x3D;&quot;true&quot;
+    (elimina)&#x3D;&quot;eliminaCorso($event)&quot;
+  &gt;&lt;/app-lista-corsi&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <h2 class="text-light">Gestione Corsi</h2>  <div class="btn-container">    <!-- Pulsante per mostrare il form per aggiungere un corso (admin) -->    <button class="btn mt-4 mb-4" (click)="toggleForm()">      {{ showForm ? "Nascondi Form" : "Aggiungi Corso" }}    </button>    <!-- Pulsante per mostrare le prenotazioni all\'admin -->    <button class="btn mt-4 mb-4" (click)="mostraPrenotazioni()">      {{        flagMostraPrenotazioni ? "Nascondi Prenotazioni" : "Mostra prenotazioni"      }}    </button>  </div>  <!-- Prenotazioni -->  <div class="bookings-container">    @if(prenotazioni.length > 0){    <div>      @for(prenotazione of prenotazioni; track prenotazione.courseId){      <ul>        <li class="text-light">Corso ID: {{ prenotazione.courseId }}</li>        <li class="text-light">Nome: {{ prenotazione.name }}</li>        <li class="text-light">Capacità: {{ prenotazione.capacity }}</li>      </ul>      }    </div>    }  </div>  <!-- Form di aggiunta Corso -->  @if(showForm){  <form    class="mt-4 mb-4 text-light"    #formCorso="ngForm"    (ngSubmit)="aggiungiCorso(formCorso)"  >    <div class="form-group col-md-6">      <label class="text-light" for="id">ID Corso</label>      <input        type="text"        id="id"        class="form-control bg-dark text-light text-light"        name="id"        ngModel        required      />    </div>    <div class="form-row">      <div class="form-group col-md-6">        <label class="text-light" for="name">Nome</label>        <input          type="text"          id="name"          class="form-control bg-dark text-light"          name="name"          ngModel          required        />      </div>      <div class="form-group col-md-6">        <label class="text-light" for="instructor">Istruttore</label>        <input          type="text"          id="instructor"          class="form-control bg-dark text-light"          name="instructor"          ngModel          required        />      </div>    </div>    <div class="form-group col-md-6">      <label class="text-light" for="description">Descrizione</label>      <textarea        id="description"        class="form-control bg-dark text-light"        name="description"        ngModel        required        rows="3"      ></textarea>    </div>    <div class="form-row">      <div class="form-group col-md-6">        <label class="text-light" for="length">Durata (min)</label>        <input          type="number"          id="length"          class="form-control bg-dark text-light"          name="length"          ngModel          required          min="1"        />      </div>      <div class="form-group col-md-6">        <label class="text-light" for="capacity">Capacità</label>        <input          type="number"          id="capacity"          class="form-control bg-dark text-light"          name="capacity"          ngModel          required          min="1"        />      </div>    </div>    <div class="d-flex justify-content-between">      <button type="submit" class="btn mt-4" [disabled]="formCorso.invalid">        Salva      </button>    </div>  </form>  }  <!--  componente ListaCorsi Renderizzato -->  <app-lista-corsi    [showDeleteButton]="true"    (elimina)="eliminaCorso($event)"  ></app-lista-corsi></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChiSiamoComponent', 'selector': 'app-chi-siamo'},{'name': 'CorsoDettagliComponent', 'selector': 'app-corso-dettagli'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListaCorsiComponent', 'selector': 'app-lista-corsi'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
